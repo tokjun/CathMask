@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>IGT</category>
+  <index>3</index>
+  <title>Cath Mask</title>
+  <description>
+	Generate cylindrical mask images from catheter transform.
+  </description>
+  <version>0.1.0.$Revision: 1.1 $(alpha)</version>
+  <documentation-url>http://https://github.com/SNRLab/CatheterDetection</documentation-url>
+  <license></license>
+  <contributor>Junichi Tokuda</contributor>
+  <acknowledgements>
+    This work is part of NIH 5R01 CA111288 -- Enabling Technologies for MRI-guided Prostate Interventions (PI: Clare M. Tempany).
+  </acknowledgements>
+
+  <parameters>
+    <label>IO</label>
+    <description>Input/output parameters</description>
+    <transform fileExtensions=".txt" reference="CatheterPositionFileName">
+      <name>catheterTransform</name>
+      <label>Catheter transform</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description>Position and orientation of detected catheter.</description>
+    </transform>
+    <image>
+      <name>referenceVolume</name>
+      <label>Reference Volume</label>
+      <channel>input</channel>
+      <index>1</index>
+      <description>Refrence volume for output mask</description>
+    </image>
+    <image type="label">
+      <name>outputVolume</name>
+      <label>Mask image</label>
+      <channel>output</channel>
+      <index>2</index>
+      <description>Mask image</description>
+    </image>
+  </parameters>
+  <parameters>
+    <label>Dimensions</label>
+    <description>Dimensions of cylindrical mask</description>
+    <double>
+      <name>diameter</name>
+      <longflag>diameter</longflag>
+      <flag>d</flag>
+      <label>Diameter</label>
+      <description>Diameter of cylindrical mask</description>
+      <default>50</default>
+    </double>
+    <double>
+      <name>length</name>
+      <longflag>length</longflag>
+      <flag>l</flag>
+      <label>Length</label>
+      <description>Length of cylindrical mask</description>
+      <default>50</default>
+    </double>
+  </parameters>
+</executable>

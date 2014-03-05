@@ -1,4 +1,4 @@
 CathMask
 ========
 
-Mask Generator for CathMatch Registration
+Cylindrical mask generator
